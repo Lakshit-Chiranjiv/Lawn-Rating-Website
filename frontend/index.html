@@ -21,5 +21,31 @@
             <button class="text-xl font-semibold bg-green-400 text-white py-4 px-32 rounded cursor-pointer hover:scale-105 transition-all">Rate</button>
         </div>
     </main>
+    <section class="flex justify-around items-center gap-8 my-12">
+        <div class="bg-red-200 p-12 rounded w-[70%]" id="#rate-lawn-form">
+            <h2 class="text-3xl font-bold mb-6 text-center">Put your details</h2>
+            <label for="name">Name</label><br>
+            <input type="text" class="h-8 rounded p-4 mt-2 mb-6 w-[100%]" placeholder="Enter name"><br>
+            <label for="email">Email</label><br>
+            <input type="email" class="h-8 rounded p-4 mt-2 mb-6 w-[100%]" placeholder="Enter email"><br>
+            <label for="progress">On a scale of 100, How clean is your Lawn ?</label><br>
+            <input type="range" class="w-[100%]" id="rangeInput">
+            <p class="text-center font-bold" id="rateval">50</p>
+            <button class="text-xl font-semibold bg-green-400 text-white py-2 mt-6 w-[100%] rounded cursor-pointer">Submit</button>
+        </div>
+        <div class="">
+            <img src="./assets/garden.svg" alt="garden" class="w-96">
+        </div>
+    </section>
 </body>
+
+<script>
+    let p = document.querySelector('#rateval')
+    let rangeInput = document.querySelector('#rangeInput')
+    rangeInput.addEventListener('change',(e) => {
+        let val = document.createTextNode(Number(e.target.value))
+        p.innerHTML = ''
+        p.appendChild(val)
+    })
+</script>
 </html>
